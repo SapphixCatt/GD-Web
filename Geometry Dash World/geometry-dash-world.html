@@ -1,0 +1,195 @@
+<html lang="en-US"><!-- Mirrored from geometrydashlite.io/geometry-dash-world by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 12 Jun 2026 19:09:44 GMT --><!-- Added by HTTrack --><head><meta http-equiv="content-type" content="text/html;charset=UTF-8"><!-- /Added by HTTrack -->
+<meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Geometry Dash World</title><meta name="description" content="Geometry Dash World is a great choice for those who like a challenge and have an interest in rhythm-based games. Join and enjoy the music of this game."><meta name="title" content="Geometry Dash World"><meta name="keywords" content="Geometry Dash World"><meta name="news_keywords" content="Geometry Dash World"><link rel="canonical" href="geometry-dash-world.html"><link rel="icon" href="upload/cache/upload/imgs/geometry-dash-world-m144x144.jpg"><!-- META FOR FACEBOOK --><meta property="og:title" content="Geometry Dash World" itemprop="headline"><meta property="og:type" content="website"><meta property="og:url" itemprop="url" content="geometry-dash-world.html"><meta property="og:image" itemprop="thumbnailUrl" content="upload/imgs/geometry-dash-world.jpg"><meta property="og:description" content="Geometry Dash World is a great choice for those who like a challenge and have an interest in rhythm-based games. Join and enjoy the music of this game." itemprop="description"><meta property="og:site_name" content="Geometry Dash Lite"><link rel="apple-touch-icon" href="upload/cache/upload/imgs/geometry-dash-world-m144x144.jpg"><!-- META FOR TWITTER --><meta name="twitter:title" content="Geometry Dash World"><meta name="twitter:url" content="geometry-dash-world.html"><meta name="twitter:image" content="upload/imgs/geometry-dash-world.jpg"><meta name="twitter:description" content="Geometry Dash World is a great choice for those who like a challenge and have an interest in rhythm-based games. Join and enjoy the music of this game."><meta name="twitter:card" content="summary"><link rel="preconnect" href="https://fonts.gstatic.com/"><link href="https://fonts.googleapis.com/css2?family=Catamaran:wght@500&amp;display=swap" rel="stylesheet"><link rel="stylesheet" href="themes/geometrydashlite.io/rs/css/reboot.css"><link rel="stylesheet" href="themes/geometrydashlite.io/rs/css/grid.css"><link rel="stylesheet" href="themes/geometrydashlite.io/rs/css/body-style3860.css?v=1"> <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-8J1T3W0VWH"></script><script>window.dataLayer = window.dataLayer || [];
+ function gtag() {
+ dataLayer.push(arguments);
+ }
+ gtag('js', new Date());
+
+ gtag('config', 'G-8J1T3W0VWH');</script>		<script src="../jsc.mgid.com/site/1077784.js" async=""></script></head><body><div style=" position: fixed; top: 0; left: 0;"><link rel="stylesheet" href="themes/geometrydashlite.io/rs/css/homee67d.css?v=1.3"><link rel="stylesheet" href="game/RS/game0fe5.css?v=3.12">	<!-- game --><div id="unity-container" class="unity-desktop"><canvas id="unity-canvas" width="1920" height="1080" tabindex="-1"></canvas></div><div id="unity-loading-bar" style="display: block;"><div class="row_loadding"><div class="ads_loadding_text">Advertisement</div><div class="ads_loadding"><div class="ads_loadding_content"><div data-type="_mgwidget" data-widget-id="1946055"></div></div></div><div class="tilte-game">Geometry Dash World</div><div class="unity-box"><div id="unity-progress-bar-empty"><div id="unity-progress-bar-full"></div></div></div><div id="div_btn"><button class="btn_play" onclick="none_loadding()">Play</button></div><div class="box-full"></div></div></div><div id="AdsInGame"><div class="row_loadding"><div class="ads_loadding_text">Advertisement</div><div class="ads_inGame"><div class="ads_loadding_content"><div style="width:300px; height:300px; background: #555;">ads</div></div><div id="vaule_countdown"></div><div id="btn_close"><button class="btn_play" onclick="none_ads_inGame()">Close</button></div><div class="box-full"></div></div></div></div><script>window.originalFolder = '/game/geometry-world';
+ var container = document.querySelector("#unity-container");
+ var canvas = document.querySelector("#unity-canvas");
+ var loadingBar = document.querySelector("#unity-loading-bar");
+ var progressBarFull = document.querySelector("#unity-progress-bar-full");
+ var buildUrl = "game/geometry-world/Build/index.html";
+ var loaderUrl = buildUrl + "/geometry-world.loader.js";
+ var config = {
+ dataUrl: buildUrl + "/geometry-world.data",
+ frameworkUrl: buildUrl + "/geometry-world.framework.js",
+ codeUrl: buildUrl + "/geometry-world.wasm",
+ streamingAssetsUrl: window.originalFolder + '/StreamingAssets',
+ companyName: "Greenlight",
+ productName: "Geometry World",
+ productVersion: "1.0.1",
+ };
+ loadingBar.style.display = 'block';
+ const div_btn = document.querySelector("#div_btn");
+ var script = document.createElement("script");
+ script.src = loaderUrl;
+ script.onload = () => {
+ createUnityInstance(canvas, config, (progress) => {
+ progressBarFull.style.width = 100 * progress + '%';
+ })
+ .then((unityInstance) => {
+ div_btn.style.display = 'block';
+ })
+ .catch((message) => {
+ alert(message);
+ });
+ };
+ document.body.appendChild(script);
+</script><script src="themes/geometrydashlite.io/rs/js/jquery-3.4.1.min.js"></script><script defer="" src="themes/geometrydashlite.io/rs/plugins/raty/jquery.raty.min.js"></script><script>let FlagTimeout = 0;
+	let timeTimeout = 39000;
+	let arrRa = [1, 2, 3, 4, 3, 6];	
+	let offsetHours = -(new Date().getTimezoneOffset())/60;		
+	let fruits = ['1946053', '1946054', '1946055', '1946056', '1946057', '1946058', '1946060'];
+	
+	function ChangeFlagTimeout() {		
+		FlagTimeout = 1;
+		setTimeout(function() {
+			FlagTimeout = 0;
+		}, timeTimeout);
+	}
+
+ function none_ads_inGame() {
+		document.getElementById("AdsInGame").style.display = "none";
+		document.getElementById("btn_close").style.display = "none";
+		document.getElementById("vaule_countdown").style.display = "block";
+ }
+	function show_ads_inGame(){
+		if(FlagTimeout==0){		
+			show_ads_inGame_dp();
+			ChangeFlagTimeout();
+		}else{
+			none_ads_inGame(false);
+		}
+	}
+	function none_loadding() {
+		let loader = document.querySelector("#loader");
+		if(loader==null){
+			loader = document.querySelector("#unity-loading-bar")
+		}
+		loader.style.display = "none";
+	}
+	
+ function show_ads_inGame_dp() {
+ document.getElementById("AdsInGame").style.display = "block";
+	 let cdad= fruits[Math.floor(Math.random() * fruits.length)];		
+	 let ads_load = '<div data-type="_mgwidget" data-widget-id="'+cdad+'"></div>';
+	 let randomItem = arrRa[Math.floor(Math.random() * arrRa.length)];
+	 let ads_loadding_content =document.getElementsByClassName("ads_loadding_content")[1];	 
+	 console.log('arrR: '+randomItem);		
+		if (offsetHours!==7){
+			if( (randomItem%3)===0){
+				ads_loadding_content.innerHTML='<iframe src="https://in-gameadvertising.com/geometry-dash-3d" style="border: none;width: 250px;height: 250px;"></iframe>';
+			}else{
+				ads_loadding_content.innerHTML = ads_load;
+				(function(w,q){w[q]=w[q]||[];w[q].push(["_mgc.load"])})(window,"_mgq");
+			}
+		}else{
+			ads_loadding_content.innerHTML = ads_load;
+			(function(w,q){w[q]=w[q]||[];w[q].push(["_mgc.load"])})(window,"_mgq");
+		}
+
+ var countDownClose = 6;
+ var x = setInterval(function () {
+ countDownClose = countDownClose - 1;
+ document.getElementById("vaule_countdown").innerHTML = "Continue in " + countDownClose;
+ if (countDownClose < 0) {
+ clearInterval(x);
+ document.getElementById("vaule_countdown").style.display = "none";
+ document.getElementById("btn_close").style.display = "block";
+ countDownClose = 6;
+ document.getElementById("vaule_countdown").innerHTML = "Continue in " + countDownClose;
+
+ }
+ }, 1000);
+ }
+	function show_Ads1() {
+		(function(w,q){w[q]=w[q]||[];w[q].push(["_mgc.load"])})(window,"_mgq");
+		let ads1 = '<div data-type="_mgwidget" data-widget-id="1946061"></div>';
+		document.getElementById("Ads1").innerHTML = ads1;		
+		(function(w,q){w[q]=w[q]||[];w[q].push(["_mgc.load"])})(window,"_mgq");
+	}
+
+	function show_Ads_Loading() {
+		let cdad= fruits[Math.floor(Math.random() * fruits.length)];		
+		let ads_load = '<div data-type="_mgwidget" data-widget-id="'+cdad+'"></div>';
+		let randomItem = arrRa[Math.floor(Math.random() * arrRa.length)];
+		let ads_loadding_content =document.getElementsByClassName("ads_loadding_content")[0];
+		console.log('arrRa: '+randomItem);	
+		if (offsetHours!==7){
+			if( (randomItem%3)===0){
+				ads_loadding_content.innerHTML='<iframe src="https://in-gameadvertising.com/geometry-dash-3d" style="border: none;width: 250px;height: 250px;"></iframe>';
+			}else{
+				ads_loadding_content.innerHTML = ads_load;
+				(function(w,q){w[q]=w[q]||[];w[q].push(["_mgc.load"])})(window,"_mgq");
+			}
+		}else{
+			ads_loadding_content.innerHTML = ads_load;
+			(function(w,q){w[q]=w[q]||[];w[q].push(["_mgc.load"])})(window,"_mgq");
+		}
+	}
+
+	
+		show_Ads1();
+		show_Ads_Loading();
+		document.getElementsByClassName("tilte-game")[0].innerHTML = 'Geometry Dash World';
+</script> <script>(function() {
+ function isEditable(el) {
+ if (!el) return false;
+ if (el.isContentEditable) return true;
+ var tag = (el.tagName || '').toUpperCase();
+ return tag === 'INPUT' || tag === 'TEXTAREA';
+ }
+
+ var origAddEventListener = EventTarget.prototype.addEventListener;
+ EventTarget.prototype.addEventListener = function(type, listener, options) {
+ if (['keydown','keypress','keyup'].includes(type) &&
+ (this === document || this === window)) {
+ var wrapped = function(ev) {
+ if (isEditable(ev.target)) {
+ return; 
+ }
+ return listener.call(this, ev);
+ };
+ return origAddEventListener.call(this, type, wrapped, options);
+ }
+ return origAddEventListener.call(this, type, listener, options);
+ };
+})();</script><script> 
+		function ToggleInfo(){
+			let width_panel = $("div.main-panel").css('width');
+			width_panel = width_panel.replaceAll('px','');
+			if (( width_panel >= 300)) {
+				$("div.main-panel").css('width', '0px');
+				$("div.main-panel-ads").css('display', 'none'); 
+				$("div.main-panel-content").css('display', 'none'); 			
+				$('button.hide-main-panel').children('i').html('Info');
+			} else {
+				$("div.main-panel").css('width', $("div.main-panel").css('max-width'));
+				$("div.main-panel-ads").css('display', 'block'); 
+				$("div.main-panel-content").css('display', 'block'); 
+				$('button.hide-main-panel').children('i').html('>>');
+			}
+		}
+		function ShowInfo(){
+			$("div.main-panel").css('width', $("div.main-panel").css('max-width'));
+			$("div.main-panel-ads").css('display', 'block'); 
+			$("div.main-panel-content").css('display', 'block'); 
+			$('button.hide-main-panel').children('i').html('>>');
+		}
+		function HideInfo(){			
+			$("div.main-panel").css('width', '0px');
+			$("div.main-panel-ads").css('display', 'none'); 
+			$("div.main-panel-content").css('display', 'none'); 			
+			$('button.hide-main-panel').children('i').html('Info');
+		}
+		$('button.hide-main-panel').click(function () {				
+			ToggleInfo();
+		});		
+	 </script> </div><script src="game/geometry-world/Build/index.html/geometry-world.loader.js"></script>
+
+
+
+
+</body><!-- Mirrored from geometrydashlite.io/geometry-dash-world by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 12 Jun 2026 19:10:43 GMT --></html>
