@@ -185,14 +185,14 @@
     // Initialize Unity Instance
     var gameInstance = UnityLoader.instantiate("gameContainer", "./Build/GeometryDashLite.json");
 
-    // Hide loading screen 1 second after loading bar animation ends
+    // Hide loading screen 2 seconds after loading bar animation ends
     const loadingFill = document.getElementById('loadingFill');
     const loadingScreen = document.getElementById('loadingScreen');
 
     loadingFill.addEventListener('animationend', () => {
       setTimeout(() => {
         loadingScreen.style.display = 'none';
-      }, 1000);
+      }, 2000); // 2000ms (2 seconds) delay
     });
 
     // Auto-click "OK" buttons script from second file
