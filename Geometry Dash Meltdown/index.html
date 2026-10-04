@@ -27,7 +27,6 @@
       width: 100%;
       height: 100%;
       z-index: 10;
-      transition: opacity 0.3s ease;
     }
 
     /* Fullscreen Background Image */
@@ -129,7 +128,7 @@
       transform: scale(0.8);
     }
 
-    /* Unity Canvas Container */
+    /* Unity Game Container */
     #gameContainer {
       position: absolute;
       top: 0;
@@ -137,7 +136,6 @@
       width: 100vw;
       height: 100vh;
       background: #231f20;
-      display: none;
       z-index: 1;
     }
 
@@ -204,14 +202,12 @@
     // Instantiate Unity Engine
     var gameInstance = UnityLoader.instantiate("gameContainer", "Build/GeometryDashMeltDown_.json");
 
-    // Transition from Custom Loading Screen to Unity Canvas
+    // Instant swap logic
     const loadingFill = document.getElementById('loadingFill');
     const loadingScreen = document.getElementById('loadingScreen');
-    const gameContainer = document.getElementById('gameContainer');
 
-    loadingFill.addEventListener('animationend', () => {
-      setTimeout(() => {
-        gameContainer.style.display = 'block';
+    loadingFill.addEventListener('animationend', function() {
+      setTimeout(function() {
         loadingScreen.style.display = 'none';
       }, 1000);
     });
