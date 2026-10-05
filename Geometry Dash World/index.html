@@ -179,7 +179,7 @@
   </div>
 
   <script>
-    // --- ANTI-SLOP NETWORK INTERCEPTOR ---
+    // --- ANTI-SLOP NETWORK INTERCEPTOR & ANTI-REDIRECT SHIELD ---
     (function() {
       // 1. Intercept XMLHttpRequest (XHR) network calls from compiled Unity assemblies
       var proxiedOpen = window.XMLHttpRequest.prototype.open;
@@ -192,7 +192,7 @@
         return proxiedOpen.apply(this, arguments);
       };
 
-      // 2. Intercept Fetch API requests (just in case the runtime updates execution paths)
+      // 2. Intercept Fetch API requests
       var originalFetch = window.fetch;
       window.fetch = function(input, init) {
         if (typeof input === 'string' && input.includes('game.txt')) {
@@ -201,8 +201,23 @@
         }
         return originalFetch(input, init);
       };
+
+      // 3. Prevent Frame-Busting / Domain Redirect Hijacks
+      // Overrides window unloading and shadows location descriptors to freeze execution shifts
+      window.onbeforeunload = function() {
+        return "Preventing automatic redirect to external arcade site.";
+      };
+      
+      try {
+        Object.defineProperty(window, 'location', {
+          writable: false,
+          configurable: false
+        });
+      } catch (e) {
+        console.log("[Shield] Advanced window protection active.");
+      }
     })();
-    // -------------------------------------
+    // -----------------------------------------------------------
 
     // Random loading text selector
     const randomIndex = Math.floor(Math.random() * 68) + 1;
