@@ -179,6 +179,31 @@
   </div>
 
   <script>
+    // --- ANTI-SLOP NETWORK INTERCEPTOR ---
+    (function() {
+      // 1. Intercept XMLHttpRequest (XHR) network calls from compiled Unity assemblies
+      var proxiedOpen = window.XMLHttpRequest.prototype.open;
+      window.XMLHttpRequest.prototype.open = function(method, url) {
+        if (typeof url === 'string' && url.includes('game.txt')) {
+          // Hard-redirect the file target query to pull locally from this repository directory
+          url = "./game.txt";
+          console.log("[Interceptor] Blocked root domain fallbacks and forced game.txt query local!");
+        }
+        return proxiedOpen.apply(this, arguments);
+      };
+
+      // 2. Intercept Fetch API requests (just in case the runtime updates execution paths)
+      var originalFetch = window.fetch;
+      window.fetch = function(input, init) {
+        if (typeof input === 'string' && input.includes('game.txt')) {
+          input = "./game.txt";
+          console.log("[Interceptor] Blocked root domain fetch and forced game.txt query local!");
+        }
+        return originalFetch(input, init);
+      };
+    })();
+    // -------------------------------------
+
     // Random loading text selector
     const randomIndex = Math.floor(Math.random() * 68) + 1;
     document.getElementById('randomText').src = `img/load-screen-text/text${randomIndex}.png`;
